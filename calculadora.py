@@ -34,7 +34,7 @@ while True:
     if opcion == "1":
         print("\n--- CIRCULO ---")
         try:
-            radio = float(input("Ingresa el radio: "))  # ✅ bien
+            radio = float(input("Ingresa el radio: ")) 
             area = 3.1416 * radio ** 2
             perimetro = 2 * 3.1416 * radio
             print(".................")
@@ -49,8 +49,8 @@ while True:
     elif opcion == "2":
         print("\n--- RECTANGULO ---")
         try:
-            base = float(input("Ingresa la base: "))        # ✅ faltaba input()
-            altura = float(input("Ingresa la altura: "))    # ✅ faltaba input()
+            base = float(input("Ingresa la base: "))        
+            altura = float(input("Ingresa la altura: "))    
             area = base * altura
             perimetro = 2 * (base + altura)
             print(".................")
@@ -65,8 +65,8 @@ while True:
     elif opcion == "3":
         print("\n--- PENTAGONO ---")
         try:
-            lado = float(input("Ingresa el lado: "))        # ✅ faltaba input()
-            apotema = float(input("Ingresa la apotema: "))  # ✅ faltaba input()
+            lado = float(input("Ingresa el lado: "))        
+            apotema = float(input("Ingresa la apotema: "))  
             perimetro = 5 * lado
             area = (perimetro * apotema) / 2
             print(".................")
@@ -81,8 +81,8 @@ while True:
     elif opcion == "4":
         print("\n--- TRAPECIO ---")
         try:
-            base_mayor = float(input("Ingresa la base mayor: "))  # ✅ faltaba input()
-            base_menor = float(input("Ingresa la base menor: "))  # ✅ faltaba input()
+            base_mayor = float(input("Ingresa la base mayor: "))  
+            base_menor = float(input("Ingresa la base menor: "))  
             altura = float(input("Ingresa la altura: "))
             lado1 = float(input("Ingresa el lado izquierdo: "))
             lado2 = float(input("Ingresa el lado derecho: "))
@@ -100,7 +100,7 @@ while True:
     elif opcion == "5":
         print("\n--- ESFERA ---")
         try:
-            radio = float(input("Ingresa el radio: "))  # ✅ faltaba input()
+            radio = float(input("Ingresa el radio: "))  
             area = 4 * 3.1416 * radio ** 2
             volumen = (4/3) * 3.1416 * radio ** 3
             print(".................")
@@ -115,8 +115,8 @@ while True:
     elif opcion == "6":
         print("\n--- CILINDRO ---")
         try:
-            radio = float(input("Ingresa el radio: "))    # ✅ faltaba input()
-            altura = float(input("Ingresa la altura: "))  # ✅ faltaba input()
+            radio = float(input("Ingresa el radio: "))    
+            altura = float(input("Ingresa la altura: "))  
             area = 2 * 3.1416 * radio ** 2 + 2 * 3.1416 * radio * altura
             volumen = 3.1416 * radio ** 2 * altura
             print(".................")
@@ -131,8 +131,8 @@ while True:
     elif opcion == "7":
         print("\n--- CONO ---")
         try:
-            radio = float(input("Ingresa el radio: "))    # ✅ faltaba input()
-            altura = float(input("Ingresa la altura: "))  # ✅ faltaba input()
+            radio = float(input("Ingresa el radio: "))   
+            altura = float(input("Ingresa la altura: "))  
             generatriz = (radio ** 2 + altura ** 2) ** 0.5
             area = 3.1416 * radio ** 2 + 3.1416 * radio * generatriz
             volumen = (1/3) * 3.1416 * radio ** 2 * altura
@@ -149,7 +149,7 @@ while True:
     elif opcion == "8":
         print("\n--- CUBO ---")
         try:
-            lado = float(input("Ingresa el lado: "))  # ✅ faltaba input()
+            lado = float(input("Ingresa el lado: "))  
             area = 6 * lado ** 2
             volumen = lado ** 3
             print(".................")
@@ -164,10 +164,10 @@ while True:
     elif opcion == "9":
         print("\n--- TRIANGULO RECTANGULO ---")
         try:
-            cateto1 = float(input("Ingresa el cateto adyacente: "))       # ✅ faltaba input()
-            cateto2 = float(input("Ingresa el cateto opuesto: "))         # ✅ faltaba input()
-            angulo1 = float(input("Ingresa el angulo 1 (sin el 90): "))   # ✅ faltaba input()
-            angulo2 = float(input("Ingresa el angulo 2 (sin el 90): "))   # ✅ faltaba input()
+            cateto1 = float(input("Ingresa el cateto adyacente: "))       
+            cateto2 = float(input("Ingresa el cateto opuesto: "))         
+            angulo1 = float(input("Ingresa el angulo 1 (sin el 90): "))   
+            angulo2 = float(input("Ingresa el angulo 2 (sin el 90): "))   
             if angulo1 + angulo2 + 90 != 180:
                 print("  ERROR: los angulos no suman 180")
             else:
