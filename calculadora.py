@@ -1,74 +1,196 @@
-#TITULO DE LA CALCULADORA "GOE CALC"
+#=======================================================================
+# CALCULADORA GEOMETRICA - GOE CALC
+#=======================================================================
 
-# INTERFAZ DE USUARIO
-print("Bienvenido a GeoCalc: ")
-
-#SELECION DE LA FIGURA 
 def mostrar_menu():
-                print("Selecciona la figura que deseas calcular: (2d o 3d) ")
-                print(f"1. circulo:")
-                print(f"2. rectangulo:")
-                print(f"3. pentagono:")
-                print(f"4. trapecio:")
-                print(f"5. esfera:")
-                print(f"6. cilindro:")
-                print(f"7. cono:")
-                print(f"8. cubo:")
-                print(f"9. triangulorectangulo:")
-                print("M. Mostrar menu de nuevo")
-                print("S. Salir")
+    print("\n====================================")
+    print("     CALCULADORA GEOMETRICA")
+    print("          GOE CALC")
+    print("====================================")
+    print("  -- FIGURAS 2D --")
+    print("  1. Circulo")
+    print("  2. Rectangulo")
+    print("  3. Pentagono")
+    print("  4. Trapecio")
+    print("  -- FIGURAS 3D --")
+    print("  5. Esfera")
+    print("  6. Cilindro")
+    print("  7. Cono")
+    print("  8. Cubo")
+    print("  -- ESPECIAL --")
+    print("  9. Triangulo Rectangulo")
+    print("====================================")
+    print("  M. Mostrar menu de nuevo")
+    print("  S. Salir")
+    print("====================================")
 
-    # FUNCIONES ´PARA CALCULAR EL AREA Y EL VOLUMEN DE LAS FIGURAS 
+print("Bienvenido a GOE CALC")
 mostrar_menu()
+
 while True:
-    opcion = input("ELIGE UNA OPCION: ").lower().strip()
+    opcion = input("\nElige una opcion: ").lower().strip()
+
+    #------ CIRCULO ------
     if opcion == "1":
-        radio = float(input("Ingrese el radio del circulo: "))
-        area_circulo =  3.1416 * radio ** 2
-        print(f"El area del circulo es: {area_circulo:.2f}")
+        print("\n--- CIRCULO ---")
+        try:
+            radio = float(input("Ingresa el radio: "))  # ✅ bien
+            area = 3.1416 * radio ** 2
+            perimetro = 2 * 3.1416 * radio
+            print(".................")
+            print("RESULTADOS:")
+            print(f"  Area:      {area:.2f}")
+            print(f"  Perimetro: {perimetro:.2f}")
+            print(".................")
+        except ValueError:
+            print("inserte un dato válido")
+
+    #------ RECTANGULO ------
     elif opcion == "2":
-        base = float(input("Ingrese la base del rectangulo: "))
-        altura = float(input("Ingrese la altura del rectangulo: "))
-        area_rectangulo = 2 * (base + altura)
-        print(f"El area del rectangulo es: {area_rectangulo:.2f}")
+        print("\n--- RECTANGULO ---")
+        try:
+            base = float(input("Ingresa la base: "))        # ✅ faltaba input()
+            altura = float(input("Ingresa la altura: "))    # ✅ faltaba input()
+            area = base * altura
+            perimetro = 2 * (base + altura)
+            print(".................")
+            print("RESULTADOS:")
+            print(f"  Area:      {area:.2f}")
+            print(f"  Perimetro: {perimetro:.2f}")
+            print(".................")
+        except ValueError:
+            print("inserte un dato válido")
+
+    #------ PENTAGONO ------
     elif opcion == "3":
-        lado = float(input("Ingrese el lado del pentagono: "))
-        apotema = float(input("Ingrese la apotema del pentagono: "))
-        area_pentagono = (5 * lado * apotema) / 2
-        print(f"El area del pentagono es: {area_pentagono:.2f}")
+        print("\n--- PENTAGONO ---")
+        try:
+            lado = float(input("Ingresa el lado: "))        # ✅ faltaba input()
+            apotema = float(input("Ingresa la apotema: "))  # ✅ faltaba input()
+            perimetro = 5 * lado
+            area = (perimetro * apotema) / 2
+            print(".................")
+            print("RESULTADOS:")
+            print(f"  Area:      {area:.2f}")
+            print(f"  Perimetro: {perimetro:.2f}")
+            print(".................")
+        except ValueError:
+            print("inserte un dato válido")
+
+    #------ TRAPECIO ------
     elif opcion == "4":
-        base_mayor = float(input("Ingrese la base mayor del trapecio: "))
-        base_menor = float(input("Ingrese la base menor del trapecio: "))
-        altura_trapecio = float(input("Ingrese la altura del trapecio: "))
-        lado1 = float(input("Igresa el lado izquierdo del trapecio: "))
-        lado2 = float(input("Igresa el lado derecho del trapecio: "))
-        area_trapecio = ((base_mayor + base_menor) / 2) * altura_trapecio
-        print(f"El area del trapecio es: {area_trapecio:.2f}")
+        print("\n--- TRAPECIO ---")
+        try:
+            base_mayor = float(input("Ingresa la base mayor: "))  # ✅ faltaba input()
+            base_menor = float(input("Ingresa la base menor: "))  # ✅ faltaba input()
+            altura = float(input("Ingresa la altura: "))
+            lado1 = float(input("Ingresa el lado izquierdo: "))
+            lado2 = float(input("Ingresa el lado derecho: "))
+            area = ((base_mayor + base_menor) / 2) * altura
+            perimetro = base_mayor + base_menor + lado1 + lado2
+            print(".................")
+            print("RESULTADOS:")
+            print(f"  Area:      {area:.2f}")
+            print(f"  Perimetro: {perimetro:.2f}")
+            print(".................")
+        except ValueError:
+            print("inserte un dato válido")
+
+    #------ ESFERA ------
     elif opcion == "5":
-        radio_esfera = float(input("Ingrese el radio de la esfera: "))
-        volumen_esfera = (4/3) * 3.1416 * radio_esfera ** 3
-        print(f"El volumen de la esfera es: {volumen_esfera:.2f}")
+        print("\n--- ESFERA ---")
+        try:
+            radio = float(input("Ingresa el radio: "))  # ✅ faltaba input()
+            area = 4 * 3.1416 * radio ** 2
+            volumen = (4/3) * 3.1416 * radio ** 3
+            print(".................")
+            print("RESULTADOS:")
+            print(f"  Area sup.: {area:.2f}")
+            print(f"  Volumen:   {volumen:.2f}")
+            print(".................")
+        except ValueError:
+            print("inserte un dato válido")
+
+    #------ CILINDRO ------
     elif opcion == "6":
-        radio_cilindro = float(input("Ingrese el radio del cilindro: "))
-        altura_cilindro = float(input("Ingrese la altura del cilindro: "))
-        volumen_cilindro = 3.1416 * radio_cilindro ** 2 * altura_cilindro
-        print(f"El volumen del cilindro es: {volumen_cilindro:.2f}")
+        print("\n--- CILINDRO ---")
+        try:
+            radio = float(input("Ingresa el radio: "))    # ✅ faltaba input()
+            altura = float(input("Ingresa la altura: "))  # ✅ faltaba input()
+            area = 2 * 3.1416 * radio ** 2 + 2 * 3.1416 * radio * altura
+            volumen = 3.1416 * radio ** 2 * altura
+            print(".................")
+            print("RESULTADOS:")
+            print(f"  Area sup.: {area:.2f}")
+            print(f"  Volumen:   {volumen:.2f}")
+            print(".................")
+        except ValueError:
+            print("inserte un dato válido")
+
+    #------ CONO ------
     elif opcion == "7":
-        radio_cono = float(input("Ingrese el radio del cono: "))
-        altura_cono = float(input("Ingrese la altura del cono: "))
-        volumen_cono = (1/3) * 3.1416 * radio_cono ** 2 * altura_cono
-        print(f"El volumen del cono es: {volumen_cono:.2f}")
+        print("\n--- CONO ---")
+        try:
+            radio = float(input("Ingresa el radio: "))    # ✅ faltaba input()
+            altura = float(input("Ingresa la altura: "))  # ✅ faltaba input()
+            generatriz = (radio ** 2 + altura ** 2) ** 0.5
+            area = 3.1416 * radio ** 2 + 3.1416 * radio * generatriz
+            volumen = (1/3) * 3.1416 * radio ** 2 * altura
+            print(".................")
+            print("RESULTADOS:")
+            print(f"  Generatriz:{generatriz:.2f}")
+            print(f"  Area sup.: {area:.2f}")
+            print(f"  Volumen:   {volumen:.2f}")
+            print(".................")
+        except ValueError:
+            print("inserte un dato válido")
+
+    #------ CUBO ------
     elif opcion == "8":
-        lado_cubo = float(input("Ingrese el lado del cubo: "))
-        volumen_cubo = lado_cubo ** 3 
-        print(f"El volumen del cubo es: {volumen_cubo:.2f}")
+        print("\n--- CUBO ---")
+        try:
+            lado = float(input("Ingresa el lado: "))  # ✅ faltaba input()
+            area = 6 * lado ** 2
+            volumen = lado ** 3
+            print(".................")
+            print("RESULTADOS:")
+            print(f"  Area sup.: {area:.2f}")
+            print(f"  Volumen:   {volumen:.2f}")
+            print(".................")
+        except ValueError:
+            print("inserte un dato válido")
+
+    #------ TRIANGULO RECTANGULO ------
     elif opcion == "9":
-        base_triangulo = float(input("Ingrese la base del triangulo rectangulo: "))
-        altura_triangulo = float(input("Ingrese la altura del triangulo rectangulo: "))
-        area_triangulo = (base_triangulo * altura_triangulo) / 2
-        print(f"El area del triangulo rectangulo es: {area_triangulo:.2f}")
+        print("\n--- TRIANGULO RECTANGULO ---")
+        try:
+            cateto1 = float(input("Ingresa el cateto adyacente: "))       # ✅ faltaba input()
+            cateto2 = float(input("Ingresa el cateto opuesto: "))         # ✅ faltaba input()
+            angulo1 = float(input("Ingresa el angulo 1 (sin el 90): "))   # ✅ faltaba input()
+            angulo2 = float(input("Ingresa el angulo 2 (sin el 90): "))   # ✅ faltaba input()
+            if angulo1 + angulo2 + 90 != 180:
+                print("  ERROR: los angulos no suman 180")
+            else:
+                hipotenusa = (cateto1 ** 2 + cateto2 ** 2) ** 0.5
+                area = (cateto1 * cateto2) / 2
+                perimetro = cateto1 + cateto2 + hipotenusa
+                print(".................")
+                print("RESULTADOS:")
+                print(f"  Hipotenusa:{hipotenusa:.2f}")
+                print(f"  Area:      {area:.2f}")
+                print(f"  Perimetro: {perimetro:.2f}")
+                print(f"  Angulos: 90 + {angulo1} + {angulo2} = 180")
+                print(".................")
+        except ValueError:
+            print("inserte un dato válido")
+
     elif opcion == "m":
         mostrar_menu()
+
     elif opcion == "s":
-        print("Gracias por usar GeoCalc. ¡Hasta luego!")
-    
+        print("\nGracias por usar GOE CALC")
+        print("Hasta luego!")
+        break
+
+    else:
+        print("Opcion no valida, intenta de nuevo")
